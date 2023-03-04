@@ -1,11 +1,8 @@
-folderName="temp"
-echo -n フォルダ名: 
-read folderName
-mkdir ./archives/$folderName/
-mv ./main.go ./archives/$folderName/main.go
+set folderName (ls | grep -v README.md | grep -v myAtCoder | grep -v archives | grep -v go.mod | grep -v main.go |grep -v reset.sh)
+mv ./main.go ./$folderName/
+mv ./$folderName/ ./archives/
 
 rm ./myAtCoder
-cp ./archives/main.go ./
 
 echo -n ---; echo " ~/check.sh"
 
